@@ -11,6 +11,7 @@ Before first start up you should make sure to create a save file for the server 
     docker run --rm \
         -v /path/to/data:/data \
         -v /path/to/config:/config \
+        icedream/factorio:0.14.21 \
         /opt/factorio/bin/x64/factorio --create /data/saves/my-save.zip
 
 After that you can use the givena volumes for running the server, for example using Docker Compose!
@@ -23,7 +24,7 @@ version: "2"
 services:
     factorio:
         # The image to use, version number of the server can be used as a tag.
-        image: icedream/factorio:0.14.2
+        image: icedream/factorio:0.14.21
 
         # Volumes to mount in
         volumes:
