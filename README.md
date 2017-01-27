@@ -4,6 +4,8 @@ This image includes the headless build of Factorio with paths set to store data 
 
 ## Available tags
 
+All available tags are always listed [in Docker Hub](https://hub.docker.com/r/icedream/factorio/tags), the list below explains the maintained tags:
+
 - `latest`, `stable`, `0.14.21`, `0.14`, `0`: [Latest stable version available](https://www.factorio.com/download-headless/stable).
 - `experimental`, `0.14.21`, `0.14`, `0`: [Latest experimental version available](https://www.factorio.com/download-experimental/stable).
 - `develop`: [Latest version of this Docker image with experimental tweaks](https://github.com/icedream/docker-factorio/tree/develop).
@@ -20,7 +22,7 @@ Before first start up you should make sure to create a save file for the server 
         icedream/factorio:0.14.21 \
         /opt/factorio/bin/x64/factorio --create /data/saves/my-save.zip
 
-After that you can use the givena volumes for running the server, for example using Docker Compose!
+After that you can use the given volumes for running the server, for example using Docker Compose!
 
 ### Example Docker Compose file
 
