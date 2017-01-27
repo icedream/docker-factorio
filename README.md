@@ -2,6 +2,12 @@
 
 This image includes the headless build of Factorio with paths set to store data in the /data folder and configuration in the /config folder which can both be used as volumes.
 
+## Available tags
+
+- `latest`, `stable`, `0.14.21`, `0.14`, `0`: [Latest stable version available](https://www.factorio.com/download-headless/stable).
+- `experimental`, `0.14.21`, `0.14`, `0`: [Latest experimental version available](https://www.factorio.com/download-experimental/stable).
+- `develop`: [Latest version of this Docker image with experimental tweaks](https://github.com/icedream/docker-factorio/tree/develop).
+
 ## Starting a server
 
 ### Creating the savefile
