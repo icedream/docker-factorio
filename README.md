@@ -6,8 +6,8 @@ This image includes the headless build of Factorio with paths set to store data 
 
 All available tags are always listed [in Docker Hub](https://hub.docker.com/r/icedream/factorio/tags), the list below explains the maintained tags:
 
-- `latest`, `stable`, `0.14.21`, `0.14`, `0`: [Latest stable version available](https://www.factorio.com/download-headless/stable).
-- `experimental`, `0.14.21`, `0.14`, `0`: [Latest experimental version available](https://www.factorio.com/download-experimental/stable).
+- `latest`, `stable`, `0.14.22`, `0.14`, `0`: [Latest stable version available](https://www.factorio.com/download-headless/stable).
+- `experimental`, `0.14.22`, `0.14`, `0`: [Latest experimental version available](https://www.factorio.com/download-experimental/stable).
 - `develop`: [Latest version of this Docker image with experimental tweaks](https://github.com/icedream/docker-factorio/tree/develop).
 
 Older versions:
