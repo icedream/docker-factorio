@@ -1,13 +1,16 @@
 FROM debian:jessie-slim
 
-ARG FACTORIO_VERSION=0.14.23
+ARG FACTORIO_VERSION=0.15.4
 ARG FACTORIO_HEADLESS_URL=https://www.factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64
-ARG FACTORIO_HEADLESS_SHA512=527d83b33e39fefcdc15a12febdc72bb3e6bae755f4adbc5721eae1408137dea9b8a5f56a0095b60c0bafd67b4eacf0f993e40097c369f291ab241943a90a4e9
+ARG FACTORIO_HEADLESS_SHA512=d754f5a7ab2134364b80a06658ed0bd39558a5cacc266b05d3210838606c41769e6f4912274c27778cb411253640f2b1ca97fb750817739c5e75eb0fe7ca3bf3
 
 # Unpack and reconfigure Factorio
-ADD ${FACTORIO_HEADLESS_URL} /var/tmp/factorio.tar.gz
+ADD ${FACTORIO_HEADLESS_URL} /var/tmp/factorio.tar
 RUN \
-	echo "${FACTORIO_HEADLESS_SHA512} /var/tmp/factorio.tar.gz" |\
+	apt-get update &&\
+	apt-get install -y xz-utils &&\
+	apt-mark auto xz-utils &&\
+	echo "${FACTORIO_HEADLESS_SHA512} /var/tmp/factorio.tar" |\
 		sha512sum -c --strict - &&\
 	\
 	mkdir -p /opt &&\
@@ -16,7 +19,8 @@ RUN \
 	\
 	for f in /opt/factorio/bin/x64/*; do \
 		chmod -v +x "$f"; \
-	done
+	done &&\
+	apt-get autoremove -y --purge
 
 # Reconfigure Factorio
 COPY config-path.cfg /opt/factorio/config-path.cfg
